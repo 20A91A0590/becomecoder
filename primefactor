@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+class solution
+{
+public:
+long long int primeProduct(int n)
+{
+long long int x=1;
+        for(int i=2;i*i<=n;i++)
+        {
+            bool f=false;
+            while(n%i==0)
+            {
+                n=n/i;
+                f=true;
+            }
+            if(f)
+            x=x*i;
+        }
+        if(n>=2) 
+        x=x*n;
+        return x;
+}
+}
