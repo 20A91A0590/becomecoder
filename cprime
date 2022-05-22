@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool isprime(int n)
+{
+for(int i=2;i*i<=n;i++)
+	{
+	if(n%i==0) return false;
+	}
+	if(n<=1) return false;
+	return true;
+}
+int lengthh(int n)
+{
+	int c=0;
+	while(n)
+	{
+		c++;
+		n/=10;
+	}
+	return c;
+}
+int main()
+{
+	int n;
+	cin>>n;
+	cout<<n<<endl;
+	int l=lengthh(n);
+	cout<<l<<endl;
+	int temp=n;
+	cout<<isprime(n)<<endl;
+	for(int i=1;i<=l;i++)
+	{
+		if(isprime(n))
+			cout<<"true"<<endl;
+		else
+			cout<<"false"<<endl;
+		int r=n%10;
+		int t=n/10;
+		int n=pow(10,l-1)*r+t;
+	}
+}
